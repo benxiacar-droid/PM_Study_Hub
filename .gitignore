@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Claude Code 本地个人配置（含本机权限/代理设置，不入库）
+.claude/settings.local.json
+
+# 临时/日志
+*.log
+scratchpad/
