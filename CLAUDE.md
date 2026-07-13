@@ -23,7 +23,18 @@
 - `选题库.md` —— 滚动选题 backlog
 - `起号方案.md` / `企业AI落地-内容素材库.md` / `两周试水计划.md` —— 策略与素材
 
+## Git / 版本管理
+
+本项目用 git 管理，远程为 GitHub **私有**仓库 `gongbenxi/AI-videoCreat`（分支 `main`）。
+
+**工作约定：只要项目文件有改动或新增（新简报、口播稿、公众号、选题更新、策略调整等），就提交并推送。** 用 Claude 做完一组改动后，主动执行：
+```bash
+git add -A && git commit -m "<简述改动>" && git push origin main
+```
+- 推送需本机代理：`export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897`（终端已配置自动跟随系统代理；Clash 换端口会自动更新）。若代理不通，git 凭据已配好，可直连推送。
+- `.claude/settings.local.json` 和 `.DS_Store` 已在 `.gitignore` 中排除，属本机个人配置，不入库。
+
 ## 备注
 
+- 每天早上 7 点有定时任务 `daily-ai-news-brief` 自动跑 ai-news、生成当天简报并推送（本机 Claude 应用开着时运行，没开则下次启动补跑）。
 - `comment-collector` 依赖 Claude in Chrome 扩展已连接、平台已登录；抓取失败会降级为「手动粘贴评论」。
-- `ai-news` 目前手动触发，跑顺后可用 schedule skill 改成每天定时。
