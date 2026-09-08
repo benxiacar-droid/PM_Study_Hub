@@ -25,13 +25,15 @@
 
 ## Git / 版本管理
 
-本项目用 git 管理，远程为 GitHub **私有**仓库 `gongbenxi/AI-videoCreat`（分支 `main`）。
+本项目用 git 管理，远程为 GitHub **公开（public）**仓库 `benxiacar-droid/PM_Study_Hub`（分支 `main`，2026-09-08 起启用）。旧仓库 `gongbenxi/AI-videoCreat`（私有）保留原有历史，之后不再推送。
 
 **工作约定：只要项目文件有改动或新增（新简报、口播稿、公众号、选题更新、策略调整等），就提交并推送。** 用 Claude 做完一组改动后，主动执行：
 ```bash
 git add -A && git commit -m "<简述改动>" && git push origin main
 ```
 - 推送需本机代理：`export HTTPS_PROXY=http://127.0.0.1:7897 HTTP_PROXY=http://127.0.0.1:7897`（终端已配置自动跟随系统代理；Clash 换端口会自动更新）。若代理不通，git 凭据已配好，可直连推送。
+- 本机 `gh` 登录了多个账号，推送前需确认 active account 是 `benxiacar-droid`（`gh auth status` 查看，不对则 `gh auth switch -u benxiacar-droid`），否则会报 "Repository not found"。
+- **仓库是公开的**，内容会对所有人可见，注意不要提交敏感信息（客户/公司真实名称、内部数据等），案例仍需按合规红线脱敏。
 - `.claude/settings.local.json` 和 `.DS_Store` 已在 `.gitignore` 中排除，属本机个人配置，不入库。
 
 ## 备注
